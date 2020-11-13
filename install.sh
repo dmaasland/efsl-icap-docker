@@ -11,13 +11,13 @@ pushd /tmp
 
 # Create all groups and users
 for g in eset-efs-daemons; do
-	groupadd -f -r $g
+  groupadd -f -r $g
 done
 
 for ug in eset-efs-licensed:eset-efs-daemons eset-efs-webd:eset-efs-daemons eset-efs-authd:eset-efs-daemons eset-efs-confd:eset-efs-daemons eset-efs-scand:eset-efs-daemons eset-efs-logd:eset-efs-daemons eset-efs-updated:eset-efs-daemons eset-efs-icapd:eset-efs-daemons; do
-	if ! id "${ug%:*}" > /dev/null 2>&1; then
-		useradd -d '/opt/eset/efs' -M -N -r -s /sbin/nologin -g "${ug#*:}" "${ug%:*}"
-	fi
+  if ! id "${ug%:*}" > /dev/null 2>&1; then
+    useradd -d '/opt/eset/efs' -M -N -r -s /sbin/nologin -g "${ug#*:}" "${ug%:*}"
+  fi
 done
 
 # Change directory permissions
@@ -27,8 +27,8 @@ mkdir -p '/var/opt/eset/efs/cache/data/Logs'
 
 chgrp -R 'eset-efs-daemons' '/var/opt/eset/efs/cache' '/var/opt/eset/efs/cache/data' '/var/opt/eset/efs/modules_notice'
 for dir in /var/opt/eset/efs/cache /var/opt/eset/efs/cache/data; do
-	chmod -R 770 "$dir"
-	chmod 1770 "$dir"
+  chmod -R 770 "$dir"
+  chmod 1770 "$dir"
 done
 chmod 1770 '/var/opt/eset/efs/cache/data/Logs'
 
