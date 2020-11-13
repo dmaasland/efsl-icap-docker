@@ -20,6 +20,24 @@ Example:
 docker run -p 1344:1344 -e LICENSE_KEY=1234-ABCD-5678-EFGH-90IJ efsl-icap
 ```
 
+You can test if it's working by using **`nc`** or **`ncat`** and isseuing the options command:
+
+```shell
+root@eb74b4c319a4:/# ncat -C 127.0.0.1 1344 -v
+Ncat: Version 7.80 ( https://nmap.org/ncat )
+Ncat: Connected to 127.0.0.1:1344.
+OPTIONS icap://127.0.0.1:1344 ICAP/1.0
+
+ICAP/1.0 200 OK
+Methods: RESPMOD
+Encapsulated: null-body=0
+Preview: 16384
+Transfer-Preview: *
+ISTag: "79be82c1484c3f82-1605264975"
+Max-Connections: 1024
+```
+
+
 **NOTE:** There will be an error about being unable to find the **`eset_rtp`** module. This is a kernel module used for on-access scanning. For obvious reasons this is not included in this container.
 
 ## Volumes
