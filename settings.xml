@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<ESET>
+ <PRODUCT NAME="efs_unix">
+  <ITEM NAME="Settings">
+   <ITEM NAME="Plugins">
+    <ITEM NAME="Icap">
+     <ITEM NAME="EnableSocks">
+      <NODE NAME="Enable" TYPE="number" VALUE="1" />
+      <ITEM NAME="InetSocks" DELETE="1">
+       <ITEM NAME="1">
+        <NODE NAME="IpAddressOrHostname" TYPE="string" VALUE="0.0.0.0" />
+        <NODE NAME="Port" TYPE="number" VALUE="540" />
+       </ITEM>
+      </ITEM>
+     </ITEM>
+     <NODE NAME="PreviewEnable" TYPE="number" VALUE="1" />
+     <NODE NAME="PreviewSize" TYPE="number" VALUE="4000" />
+     <NODE NAME="IsilonCompatibilityEnable" TYPE="number" VALUE="0" />
+    </ITEM>
+    <ITEM NAME="OAEventd">
+     <ITEM NAME="EnableSocks">
+      <NODE NAME="Enable" TYPE="number" VALUE="0" />
+     </ITEM>
+    </ITEM>
+    <ITEM NAME="Webd">
+     <ITEM NAME="EnableSocks">
+      <NODE NAME="Enable" TYPE="number" VALUE="0" />
+      <ITEM NAME="InetSocks" DELETE="1">
+       <ITEM NAME="1">
+        <NODE NAME="IpAddressOrHostname" TYPE="string" VALUE="0.0.0.0" />
+        <NODE NAME="Port" TYPE="number" VALUE="24E3" />
+       </ITEM>
+      </ITEM>
+     </ITEM>
+     </ITEM>
+   </ITEM>
+  </ITEM>
+ </PRODUCT>
+</ESET>
