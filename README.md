@@ -1,5 +1,5 @@
 # ESET File Security for Linux ICAP scanning container
-This container runs ESET File Security for Linux in a container, and exposes ICAP via port 1344.
+This container runs ESET File Security for Linux in a container. This container exposes ICAP via port 1344.
 
 ## Building
 To build this container, first download the EFSL installer:
