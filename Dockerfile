@@ -5,7 +5,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Copy files
 RUN mkdir /config
-COPY efs.x86_64.bin /tmp/efs.x86_64.bin
+ADD https://download.eset.com/com/eset/apps/business/efs/linux/latest/efs.x86_64.bin /tmp/efs.x86_64.bin
 COPY settings.xml /config/settings.xml
 COPY entrypoint.sh /entrypoint.sh
 COPY install.sh /install.sh
@@ -14,6 +14,7 @@ COPY install.sh /install.sh
 RUN chmod +x \ 
   /entrypoint.sh \
   /install.sh \
+  /tmp/efs.x86_64.bin \
   && chmod 600 \
   /config/settings.xml
 
